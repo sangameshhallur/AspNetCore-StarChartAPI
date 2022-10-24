@@ -20,7 +20,7 @@ namespace StarChart.Controllers
         [HttpGet("{id:int}", Name = "GetById")]
         public IActionResult GetById(int id)
         {            
-            if (_context.CelestialObjects.Contains(id))
+            if (id == 0)
             {
                 return NotFound();
             }
@@ -32,7 +32,7 @@ namespace StarChart.Controllers
         [HttpGet("{name}")]
         public IActionResult GetByName(string name)
         {
-            if (_context.CelestialObjects.Contains(name))
+            if (name == null)
             {
                 return NotFound();
             }
